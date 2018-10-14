@@ -76,11 +76,10 @@ def main ():
 if __name__ == '__main__':
     main()
 dr = './new_log_dir1'
-count = 0
 for fname in os.listdir(dr):
-    filepath = os.path.join(dr, fname)
-
-    with open(filepath, 'r') as fp:
+	filepath = os.path.join(dr, fname)
+count=0
+with open(filepath, 'r') as fp:
         for line in fp:
         #String to search for:
             count += line.count('teradata')
