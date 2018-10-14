@@ -75,15 +75,16 @@ def main ():
             os.rename(fpathnew,fpath)
 if __name__ == '__main__':
     main()
+
 dr = './new_log_dir1'
+count=0
 for fname in os.listdir(dr):
 	filepath = os.path.join(dr, fname)
-count=0
-with open(filepath, 'r') as fp:
-        for line in fp:
+	with open(filepath, 'r') as fp:
+		for line in fp:
         #String to search for:
-            count += line.count('teradata')
-        if count <= 0:
-            print >> sys.stderr , "No occurance of the word teradata in new_log_dir1"
-        else:
-            print count
+			count += line.count('teradata')
+if count <= 0:
+	print >> sys.stderr , "No occurance of the word teradata in new_log_dir1"
+else:
+	print count
